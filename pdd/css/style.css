@@ -117,6 +117,10 @@ header {
     margin-right: 0;
 }
 
+.hd-link:hover {
+    opacity: .8;
+}
+
 
 /* 精选专题部分 */
 
@@ -161,7 +165,7 @@ header {
 }
 
 .zt-content:hover {
-    opacity: .5;
+    opacity: .6;
 }
 
 .zt-content div:nth-child(1) a {

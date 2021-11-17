@@ -160,6 +160,10 @@ header {
     width: 125px;
 }
 
+.zt-content:hover {
+    opacity: .5;
+}
+
 .zt-content div:nth-child(1) a {
     height: 276px;
     width: 556px;

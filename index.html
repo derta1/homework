@@ -1,20 +1,86 @@
-<ul class="nav">
-    <li>
-        <a href="#"></a>
-    </li>
-    <li>
-        <a href="#"></a>
-    </li>
-    <li>
-        <a href="#"></a>
-    </li>
-    <li>
-        <a href="#"></a>
-    </li>
-    <li>
-        <a href="#"></a>
-    </li>
-    <li>
-        <a href="#"></a>
-    </li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #757575;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            display: block;
+            font-size: 22px;
+            text-decoration: none;
+            color: #fff;
+            margin: 7px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="https://derta1.github.io/homework/addAndSUb/">js实现四则运算</a>
+        </li>
+        <li>
+            <a href="https://derta1.github.com/homework/comprenhensionAboutFrontAndBack/">对前后端的理解</a>
+        </li>
+        <li>
+            <a href="https://derta1.github.io/homework/pdd/">拼多多的网页</a>
+        </li>
+        <li>
+            <a href="https://derta1.github.io/homework/myHomeTown/">我的家乡</a>
+        </li>
+        <li>
+            <a href="https://github.com/derta1/homework/tree/main/interactiveFlowChart">前后端交互流程图</a>
+        </li>
+    </ul>
+    <br>
+    <div>
+        添加仓库：<input type="radio" name="check" id="one"> 添加静态页面：<input type="radio" name="check" id="two">
+    </div>
+    <div>
+        <input type="text" nam11="anchor" id="three" value="输入文件夹名">
+        <input type="text" name="anchor" id="three" value="输入描述">
+    </div>
+    <div>
+        <button type="button">提交</button>
+</body>
+<script>
+    let radios = document.querySelectorAll("[type='radio']");
+    let submit = document.querySelectorAll("[type='button']")[0];
+    let ul = document.getElementsByTagName("ul")[0];
+    submit.addEventListener("click", function() {
+        if (radios[0].checked || radios[1].checked) {
+            let href = (radios[0].checked) ? "https://derta1.github.com/homework/" + document.querySelectorAll("[type='text']")[0].value + "/" : "https://derta1.github.io/homework/" + document.querySelectorAll("[type='text']")[0].value + "/";
+            let desc = document.querySelectorAll("[type='text']")[1].value;
+            let newLi = document.createElement("li");
+            newLi.innerHTML = "<a href='" + href + " '> " + desc + "</a>";
+            console.log(newLi.innerHTML);
+            ul.appendChild(newLi)
+        } else {
+            alert("请选择新建仓库文件夹链接或者静态页面链接");
+        }
+    })
+</script>
+
+</html>

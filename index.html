@@ -42,7 +42,7 @@
             <a href="https://derta1.github.io/homework/addAndSUb/">js实现四则运算</a>
         </li>
         <li>
-            <a href="https://derta1.github.com/homework/comprenhensionAboutFrontAndBack/">对前后端的理解</a>
+            <a href="https://derta1.github.com/homework/tree/main/comprenhensionAboutFrontAndBack/">对前后端的理解</a>
         </li>
         <li>
             <a href="https://derta1.github.io/homework/pdd/">拼多多的网页</a>
@@ -71,7 +71,7 @@
     let ul = document.getElementsByTagName("ul")[0];
     submit.addEventListener("click", function() {
         if (radios[0].checked || radios[1].checked) {
-            let href = (radios[0].checked) ? "https://derta1.github.com/homework/" + document.querySelectorAll("[type='text']")[0].value + "/" : "https://derta1.github.io/homework/" + document.querySelectorAll("[type='text']")[0].value + "/";
+            let href = (radios[0].checked) ? "https://derta1.github.com/homework/" + document.querySelectorAll("[type='text']")[0].value + "/" : "https://derta1.github.com/homework/tree/main/" + document.querySelectorAll("[type='text']")[0].value + "/";
             let desc = document.querySelectorAll("[type='text']")[1].value;
             let newLi = document.createElement("li");
             newLi.innerHTML = "<a href='" + href + " '> " + desc + "</a>";

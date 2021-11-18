@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upAndDOwn</title>
+
+</head>
+
+<body>
+    <input type="button" value="增加">
+    <span></span>
+    <input type="button" value="减小">
+    <script>
+        let num = 0;
+        let btns = document.getElementsByTagName("input");
+        let span = document.getElementsByTagName("span")[0];
+        span.innerHTML = num;
+        btns[0].addEventListener("click", function() {
+            if (num === 3) alert("最大不大于3");
+            else {
+                num++;
+                span.innerHTML = num;
+            }
+        })
+        btns[1].addEventListener("click", function() {
+            if (num === -3) alert("最小不小于-3");
+            else {
+                num--;
+                span.innerHTML = num;
+            }
+        })
+    </script>
+</body>
+
+</html>

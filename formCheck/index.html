@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formCheck</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" defer="defer"></script>
+</head>
+
+<body>
+    <div class="form">
+        <!-- 把表单内容分成三个部分 -->
+        <!-- 头部的提示信息 -->
+        <div class="head">
+            <div class="tel-login active">
+                账号登录
+            </div>
+            <div class="email-login">
+                邮箱登录
+            </div>
+        </div>
+
+        <!-- 账号密码输入框 -->
+        <div class="center">
+            <div class="input-wrapper">
+                <div class="left">
+                    <input type="text" placeholder="请输入账号">
+                    <input type="password" placeholder="请输入密码">
+                </div>
+
+                <div class="right">
+                    <input type="text" placeholder="请输入邮箱">
+                    <input type="password" placeholder="请输入密码">
+                </div>
+            </div>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="foot">
+            <input type="submit" value="登录">
+            <span class="tips">未注册的手机号验证后将自动创建账号</span>
+        </div>
+    </div>
+</body>
+
+</html>

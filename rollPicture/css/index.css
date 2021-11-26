@@ -3,59 +3,102 @@
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
 body {
     display: flex;
-    height: 100vh;
-    align-items: center;
     justify-content: center;
-}
-
-.rollPicture {
-    height: 220px;
-    width: 700px;
-    overflow: hidden;
-    position: relative;
-}
-
-.ctrl-wrapper {
-    position: absolute;
-    bottom: 0;
-    left: 46%;
-    z-index: 999;
-}
-
-.pic-wrapper {
-    display: flex;
-    height: 100%;
-    width: 500%;
-    transition: .5s;
-}
-
-.pic {
-    height: 100%;
-    width: 20%;
-    border-radius: 8px;
-    font-size: 70px;
-    text-align: center;
-    line-height: 220px;
-}
-
-.pic:nth-child(1) {
-    background-color: #40739e;
-}
-
-.pic:nth-child(2) {
+    align-items: center;
+    height: 100vh;
     background-color: #7f8fa6;
 }
 
-.pic:nth-child(3) {
-    background-color: #40739e;
+.banner {
+    position: relative;
+    width: 900px;
+    height: 300px;
+    /* padding: 20px; */
+    background-color: #fff;
+    border-radius: 9px;
+    /* overflow: hidden; */
 }
 
-.pic:nth-child(4) {
-    background-color: #0097e6;
+.images {
+    width: 2700px;
+    height: 300px;
+    transition: .4s;
 }
 
-.pic:nth-child(5) {
-    background-color: #2f3640;
+.images ul {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.images ul li {
+    width: 900px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.images ul li:nth-child(1) {
+    background-color: #f8a5c2;
+}
+
+.images ul li:nth-child(2) {
+    background-color: #ffb8b8;
+}
+
+.images ul li:nth-child(3) {
+    background-color: #ff4d4d;
+}
+
+.ctrl-img {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 230px;
+    bottom: 0px;
+    right: 20px;
+}
+
+.ctrl-img .ctrl {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: #7f8fa6 4px solid;
+}
+
+.ctrl-img .ctrl:nth-child(1) {
+    background-color: #f8a5c2;
+}
+
+.ctrl-img .ctrl:nth-child(2) {
+    background-color: #ffb8b8;
+}
+
+.ctrl-img .ctrl:nth-child(3) {
+    background-color: #ff4d4d;
+}
+
+.left-button,
+.right-button {
+    position: absolute;
+    line-height: 300px;
+    text-align: center;
+    font-size: 37px;
+    font-weight: 700;
+    bottom: 0px;
+    height: 300px;
+    width: 70px;
+    background-color: rgba(52, 73, 94, .4);
+}
+
+.left-button {
+    left: 0px;
+}
+
+.right-button {
+    right: 0px;
 }

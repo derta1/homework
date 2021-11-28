@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>近反义词查找</title>
+</head>
+
+<body>
+    想查什么词呢？<input type="text">
+    <button>查询
+    </button>
+    <br>
+    <span class="jyc"></span>
+    <br>
+    <span class="fyc"></span>
+</body>
+<script>
+    let jyc = document.querySelector(".jyc");
+    let fyc = document.querySelector(".fyc");
+
+    let btn = document.querySelector("button");
+
+    function loadData() {
+        //发送请求并解析返回的数据
+        var httpRequest;
+        var ret = {};
+        var word = document.querySelector("input").value;
+        if (window.XMLHttpRequest) {
+            httpRequest = new XMLHttpRequest();
+        } else {
+            httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                // 请求成功时渲染
+                if (JSON.parse(httpRequest.responseText).newslist[0]) {
+                    // 返回的数据可能为空
+                    ret = JSON.parse(httpRequest.responseText).newslist[0];
+                    jyc.innerHTML = !ret.jyc ? `${word}的近义词是：${ret.jyc}` : "未查找到近义词";
+                    fyc.innerHTML = !ret.fyc ? `${word}的近义词是：${ret.jyc}` : "未查找到反义词";
+                } else {
+                    jyc.innerHTML = "未查找到近义词";
+                    fyc.innerHTML = "未查找到反义词";
+                }
+            }
+        }
+        httpRequest.open("GET", "http://api.tianapi.com/jfwords/index?key=0f5914ebb4c39b885cd77e4c419b9acb&word=" + word, true);
+        httpRequest.send();
+    }
+    btn.addEventListener("click", loadData);
+</script>
+
+</html>

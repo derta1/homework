@@ -4,8 +4,6 @@ let submit = document.querySelector("[type='submit']");
 let wrapper = document.querySelector(".input-wrapper");
 let user = document.querySelector(".left").getElementsByTagName("input")[0];
 let pwd = document.querySelector(".left").getElementsByTagName("input")[1];
-
-
 eLogin.addEventListener("click", function() {
     wrapper.style.cssText = "transform: translateX(-50%);"
     eLogin.classList.toggle("active");
@@ -16,8 +14,6 @@ tLogin.addEventListener("click", function() {
     eLogin.classList.toggle("active");
     tLogin.classList.toggle("active");
 })
-
-
 submit.addEventListener("click", function() {
     if (user.value === "root" && pwd.value.toString() === "123456") {
         alert("欢迎回来，root！");

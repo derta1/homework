@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 75vw;
+    margin: 0 auto;
+    color: #333;
+    border: solid #000 1px;
+}
+
+
+/* 先设置网页的基本样式 */
+
+
+/* content部分 */
+
+h2 {
+    font-size: 38px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}
+
+span {
+    font-style: italic;
+}
+
+p {
+    line-height: 25px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+h4 {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.img-wrapper {
+    width: 75vw;
+}
+
+img {
+    background-size: cover;
+}

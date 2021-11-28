@@ -47,7 +47,7 @@
                 }
             }
         }
-        httpRequest.open("GET", "//api.tianapi.com/jfwords/index?key=0f5914ebb4c39b885cd77e4c419b9acb&word=" + word, true);
+        httpRequest.open("GET", "http://api.tianapi.com/jfwords/index?key=0f5914ebb4c39b885cd77e4c419b9acb&word=" + word, true);
         httpRequest.send();
     }
     btn.addEventListener("click", loadData);

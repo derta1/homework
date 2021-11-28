@@ -70,33 +70,6 @@
         </li>
     </ul>
     </ul>
-    <!-- <br>
-    <div>
-        添加仓库：<input type="radio" name="check" id="one"> 添加静态页面：<input type="radio" name="check" id="two">
-    </div>
-    <div>
-        <input type="text" nam11="anchor" id="three" value="输入文件夹名">
-        <input type="text" name="anchor" id="three" value="输入描述">
-    </div>
-    <div>
-        <button type="button">提交</button> -->
 </body>
-<script>
-    let radios = document.querySelectorAll("[type='radio']");
-    let submit = document.querySelectorAll("[type='button']")[0];
-    let ul = document.getElementsByTagName("ul")[0];
-    submit.addEventListener("click", function() {
-        if (radios[0].checked || radios[1].checked) {
-            let href = (radios[0].checked) ? "https://derta1.github.com/homework/" + document.querySelectorAll("[type='text']")[0].value + "/" : "https://derta1.github.com/homework/tree/main/" + document.querySelectorAll("[type='text']")[0].value + "/";
-            let desc = document.querySelectorAll("[type='text']")[1].value;
-            let newLi = document.createElement("li");
-            newLi.innerHTML = "<a href='" + href + " '> " + desc + "</a>";
-            console.log(newLi.innerHTML);
-            ul.appendChild(newLi)
-        } else {
-            alert("请选择新建仓库文件夹链接或者静态页面链接");
-        }
-    })
-</script>
 
 </html>

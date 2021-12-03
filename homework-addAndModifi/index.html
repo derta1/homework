@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlhttp实例修改</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f6fa;
+        }
+        
+        h1 {
+            position: fixed;
+            top: 250px;
+        }
+        
+        ul li {
+            list-style: none;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 30px;
+        }
+        
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 400px;
+            width: 600px;
+            background-color: #7f8fa6;
+            border-radius: 20px;
+            box-shadow: 1px 1px 3px #e1b12c;
+        }
+        
+        .content {
+            height: 300px;
+            background-color: #40739e;
+            width: inherit;
+        }
+        
+        .ctrl {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .add,
+        .reset {
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            width: 6em;
+            border-radius: 8px;
+            background-color: #dcdde1;
+        }
+        
+        .add.active,
+        .reset.active {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>疫情数据查询</h1>
+    <div class="wrapper">
+        <div class="content">
+            <ul class="epidemic"></ul>
+        </div>
+        <div class="ctrl">
+            <div class="add">继续查询</div>
+            <div class="reset">清空数据</div>
+        </div>
+    </div>
+    <script>
+        // 控制按钮
+        let add = document.querySelector(".add");
+        let reset = document.querySelector(".reset");
+        let ul = document.querySelector(".epidemic");
+        let start = -1;
+        add.addEventListener("click", function() {
+            // this.classList.toggle("active");
+            if (!(start % 10) && start != 0) {
+                [...ul.children].forEach(function(el) {
+                    ul.removeChild(el);
+                })
+            }
+            loadData(start);
+            start++;
+        });
+        reset.addEventListener("click", function() {
+            start = -1;
+            // this.classList.toggle("active");
+            [...ul.children].forEach(function(el) {
+                ul.removeChild(el);
+            })
+        });
+
+
+        function loadData(start) {
+            let xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp.open("GET", "http://api.tianapi.com/ncovabroad/index?key=0f5914ebb4c39b885cd77e4c419b9acb&date=2021-12-2", true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                let data = {};
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    data = JSON.parse(xmlhttp.responseText);
+                    let li = document.createElement("li");
+                    li.innerHTML = data.newslist[start + 1].provinceName + "死亡人数:" + data.newslist[start + 1].deadCount + "人 累计确诊人数：" + data.newslist[start + 1].confirmedCount + "人";
+                    ul.appendChild(li);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

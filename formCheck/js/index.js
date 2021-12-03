@@ -4,6 +4,7 @@ let submit = document.querySelector("[type='submit']");
 let wrapper = document.querySelector(".input-wrapper");
 let user = document.querySelector(".left").getElementsByTagName("input")[0];
 let pwd = document.querySelector(".left").getElementsByTagName("input")[1];
+
 eLogin.addEventListener("click", function() {
     wrapper.style.cssText = "transform: translateX(-50%);"
     eLogin.classList.toggle("active");

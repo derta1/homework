@@ -21,10 +21,7 @@
             background-color: #f5f6fa;
         }
         
-        h1 {
-            position: absolute;
-            top: 200px;
-        }
+        h2 {}
         
         ul li {
             list-style: none;
@@ -74,10 +71,12 @@
 </head>
 
 <body>
-    <h1>疫情数据查询</h1>
     <div class="wrapper">
         <div class="content">
-            <ul class="epidemic"></ul>
+            <ul class="epidemic">
+                <h2>疫情数据查询</h2>
+
+            </ul>
         </div>
         <div class="ctrl">
             <div class="add">继续查询</div>
@@ -92,9 +91,11 @@
         let start = -1;
         add.addEventListener("click", function() {
             // this.classList.toggle("active");
-            if (!(start % 10) && start != 0) {
+            if (!(start % 8) && start != 0) {
                 [...ul.children].forEach(function(el) {
-                    ul.removeChild(el);
+                    if (el.innerHTML != "疫情数据查询") {
+                        ul.removeChild(el);
+                    }
                 })
             }
             loadData(start);
@@ -104,7 +105,9 @@
             start = -1;
             // this.classList.toggle("active");
             [...ul.children].forEach(function(el) {
-                ul.removeChild(el);
+                if (el.innerHTML != "疫情数据查询") {
+                    ul.removeChild(el);
+                }
             })
         });
 

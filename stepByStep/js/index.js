@@ -39,5 +39,4 @@ setInterval(function() {
         next.removeAttribute("disabled");
         prev.removeAttribute("disabled");
     }
-
 })

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffeaa7;
+        }
+        
+        .countDown {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 300px;
+            width: 400px;
+            border-radius: 17px;
+            background-color: #ff7675;
+        }
+        
+        .countDown span {
+            height: 80px;
+            width: 80px;
+            border-radius: 7px;
+            line-height: 80px;
+            text-align: center;
+            font-family: Helvetica;
+            font-weight: 700;
+            font-size: 40px;
+            color: #fff;
+            background-color: #2d3436;
+        }
+        
+        .tips {
+            /* position: fixed;
+            top: 200px; */
+            font-size: 36px;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tips">距离2021年结束</div>
+    <div class="countDown">
+        <span class="day"></span>
+        <span class="hour"></span>
+        <span class="min"></span>
+        <span class="sec"></span>
+    </div>
+    <script>
+        function countDown(year, month, day, hour, min) {
+            let time = {};
+
+            // 将传入的参数解析成字符串，通过Date构造函数来创建时间戳
+            let timeStr = `${year},${month-1},${day},${hour},${min}`
+            let endTimeMs = new Date(...timeStr.split(',')).getTime();
+            let nowTimeMs = new Date().getTime();
+            let intervaTimeMs = endTimeMs - nowTimeMs;
+
+            // 计算当前时间距离结束时间的间隔
+            let intervalDays = Math.floor(intervaTimeMs / (1000 * 60 * 60 * 24));
+            let leave1 = intervaTimeMs % (1000 * 60 * 60 * 24);
+            let intervalHours = Math.floor(leave1 / (1000 * 60 * 60));
+            let leave2 = leave1 % (1000 * 60 * 60)
+            let intervalMins = Math.floor(leave2 / (1000 * 60));
+            let leave3 = leave2 % (1000 * 60)
+            let intervalSecs = Math.floor(leave3 / (1000));
+
+            // 存储计算得到的结果
+            time.days = intervalDays < 10 ? '0' + intervalDays : '' + intervalDays;
+            time.hours = intervalHours < 10 ? '0' + intervalHours : '' + intervalHours;
+            time.mins = intervalMins < 10 ? '0' + intervalMins : '' + intervalMins;
+            time.secs = intervalSecs < 10 ? '0' + intervalSecs : '' + intervalSecs;
+            return time;
+        }
+
+        let disPlayHour = document.querySelector(".hour");
+        let disPlayMin = document.querySelector(".min");
+        let disPlaySec = document.querySelector(".sec");
+        let displayDay = document.querySelector(".day");
+        setInterval(function() {
+            let intervalTime = countDown(2022, 1, 1, 0, 00);
+            // 渲染
+            disPlayHour.innerHTML = intervalTime.hours;
+            disPlayMin.innerHTML = intervalTime.mins;
+            disPlaySec.innerHTML = intervalTime.secs
+            displayDay.innerHTML = intervalTime.days;
+        }, 1000)
+    </script>
+</body>
+
+</html>

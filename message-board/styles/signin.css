@@ -1,0 +1,140 @@
+/* 登录页样式 */
+body {
+  display: flex;
+  background-image: url("../images/sign-background.png");
+  height: 100vh;
+  width: 1920px;
+  background-repeat: no-repeat;
+}
+
+/* 左侧slogan */
+.left-slogan-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 1176px;
+}
+img.left-slogan {
+  height: 326px;
+  width: 747px;
+}
+
+/* 右侧登录 */
+.right-signin {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 744px;
+}
+
+.signin {
+  box-sizing: border-box;
+  width: 597px;
+  height: 703px;
+  padding: 0 60px;
+  background: #ffffff;
+  border-radius: 35px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 145px;
+}
+.title > .info {
+  font-size: 48px;
+  font-family: SimSun;
+}
+.title > .slogan-small-icon {
+  width: 168px;
+  height: 100%;
+  background-image: url("../images/small-logo.png");
+  background-repeat: no-repeat;
+  background-position: 0 55px;
+}
+/* 表单输入控件 */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  width: 482px;
+  height: 103px;
+  margin-bottom: 52px;
+  background: #ecebeb;
+  box-shadow: 0px 5px 1px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 72px;
+  border-radius: 18px;
+}
+
+.icon-zhanghao,
+.icon-mima {
+  font-size: 36px !important;
+  color: #707070;
+}
+.input {
+  width: 410px;
+  padding: 0;
+  font-size: 26px;
+  font-family: SimSun;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  background-color: #ecebeb;
+}
+.password-input .input {
+  width: 342px;
+}
+.show-hide-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  height: 100%;
+}
+.show-hide-wrapper > .iconfont {
+  font-size: 43px;
+  color: #707070;
+}
+.password-input {
+  margin-bottom: 0;
+}
+.signin-btn-wrapper {
+  position: relative;
+  display: flex;
+  margin-top: 72px;
+  justify-content: center;
+}
+.sign-btn {
+  width: 388px;
+  height: 94px;
+  line-height: 94px;
+  text-align: center;
+  color: #fff;
+  font-family: SimSun;
+  font-size: 36px;
+  background: #a281bb;
+  border-radius: 8px;
+}
+.tip {
+  position: absolute;
+  bottom: -44px;
+  left: 0;
+  font-size: 24px;
+  font-family: SimSun;
+}
+.tip-info {
+  margin-right: 45px;
+}
+.tip > .go {
+  color: #4491fa;
+}

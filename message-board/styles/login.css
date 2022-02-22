@@ -1,0 +1,102 @@
+/* 注册页面样式 */
+
+/* 清除浮动 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../images/sign-background.png");
+  background-repeat: no-repeat;
+}
+
+/* 大的注册表单 */
+.login {
+  box-sizing: border-box;
+  width: 590px;
+  height: 703px;
+  padding: 0 55px;
+  background: #ffffff;
+  border-radius: 35px;
+}
+
+/* 头部提示信息 退出按钮 */
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 117px;
+}
+
+.title > .info {
+  font-size: 36px;
+  font-family: SimSun;
+}
+.title > .back {
+  font-size: 54px;
+}
+
+/* 表单输入 */
+.input-wrapper {
+  height: 103px;
+  margin-bottom: 50px;
+  background: #ecebeb;
+  box-shadow: 0px 5px 1px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+}
+/* 图标 */
+.icon-wrapper {
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 68px;
+  height: 100%;
+  border-radius: 18px;
+}
+
+.icon-zhanghao,
+.icon-mima {
+  font-size: 36px !important;
+  color: #707070;
+}
+/* 输入 */
+.input {
+  float: left;
+  width: 409px;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 18px;
+  outline: none;
+  font-size: 26px;
+  font-family: SimSun;
+  color: #b4b4b4;
+  text-align: left;
+  background: #ecebeb;
+}
+.input:focus {
+  color: #000;
+}
+/* 按钮 */
+
+.login-btn {
+  box-sizing: border-box;
+  height: 88px;
+  margin: 0 60px;
+  font-family: Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 88px;
+  text-align: center;
+  background: #a281bb;
+  border-radius: 20px;
+}

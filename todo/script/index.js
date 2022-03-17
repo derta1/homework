@@ -53,7 +53,6 @@ const app = new Vue({
             const neverTodoList = getNeverTodoList();
             neverTodoList.splice(index, 1);
             localStorage.setItem("neverTodoList", JSON.stringify(neverTodoList));
-            event.target.checked = !event.target.checked;
             const doneTodoList = getDoneTodoList();
             doneTodoList.push(thing);
             localStorage.setItem("doneTodoList", JSON.stringify(doneTodoList));
@@ -92,7 +91,6 @@ const app = new Vue({
             const doneTodoList = getDoneTodoList();
             doneTodoList.splice(index, 1);
             this.updateDoneTodo(this, doneTodoList);
-            event.target.checked = !event.target.checked;
             const neverTodoList = getNeverTodoList();
             neverTodoList.push(thing);
             this.updateNeverTodo(this, neverTodoList)

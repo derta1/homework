@@ -29,7 +29,7 @@
           <span>{{ neverTodoTingsLength }}</span>
         </h2>
         <ol>
-          <li v-for="(neverTodoThing, index) in neverTodoList" :data-index="index">
+          <li v-for="(neverTodoThing, index) in neverTodoList" :key="Date.now()">
             <input type="checkbox" @change="addToDoneTodoList(neverTodoThing, index, $event)" name="never" :key="index"/>
             <p  @click.self="displayNeverInput(index, $event)">{{neverTodoThing}}
               <input type="text" class="never-input" v-model="neverThingModify" @keydown.enter="modifyNeverThing(index, $event)">
@@ -46,8 +46,8 @@
           <span >{{ doneTodoTingsLength }}</span>
         </h2>
         <ul>
-          <li v-for="(doneTodoThing, index) in doneTodoList" :data-index="index">
-            <input type='checkbox' @change="fromDoneToNeverList(doneTodoThing, index, $event)" checked :key="index"/>
+          <li v-for="(doneTodoThing, index) in doneTodoList" :key="Date.now()">
+            <input type='checkbox' @change="fromDoneToNeverList(doneTodoThing, index, $event)" checked />
             <p @click.self="displayDoneInput(index, $event)">{{doneTodoThing}}
               <input type="text" class="done-input" v-model="doneThingModify" @keydown.enter="modifyDoneThing(index, $event)">
             </p>
